@@ -6,7 +6,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 /* 
-    RESETS
+    RESETS / DEFAULTS
 */ 
 * {
   padding: 0;
@@ -41,6 +41,21 @@ section {
 
 button {
   cursor: pointer;
+  border: none;
+}
+
+/* 
+    REUSABLE
+*/
+.container {
+  padding: 50px 0;
+}
+
+.row {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
 }
 
 .click {
@@ -56,7 +71,7 @@ button {
 }
 
 .highlight-text {
-  color: var(--font-highlight-clr);
+  color: var(--highlight-clr);
 }
 
 /* 
@@ -65,7 +80,7 @@ button {
 :root {
   --primary-bgc: rgb(245, 245, 245);
 
-  --font-highlight-clr: #659289;
+  --highlight-clr: #527770;
 }
 
 /* 
@@ -104,7 +119,7 @@ button {
 }
 
 .social__link {
-  background-color: var(--font-highlight-clr);
+  background-color: var(--highlight-clr);
   color: #fff;
   padding: 16px;
   height: 32px;
@@ -186,6 +201,7 @@ nav {
 .nav__link--list {
   display: flex;
   align-items: center;
+  margin-right: 12px;
 }
 
 .nav__link {
@@ -202,3 +218,54 @@ nav {
   font-size: 1.5rem;
 }
 
+/* 
+    PROJECTS
+*/
+.project-row {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.section__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.project__title {
+  color: var(--highlight-clr);
+  font-size: 1.75rem;
+  line-height: 2;
+}
+
+.project__img--wrapper:nth-child(odd) {
+  width: 500px;
+  margin-right: 24px;
+}
+
+.project__img--wrapper:nth-child(even) {
+  width: 500px;
+  margin-left: 24px;
+}
+
+.project__links {
+  margin-top: 12px;
+}
+
+.project__link {
+  font-size: 0.85rem;
+  background-color: var(--highlight-clr);
+  color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 12px;
+}
