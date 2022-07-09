@@ -1,10 +1,13 @@
-// async function firstSixIncomplete() {
-//     const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
-//     const result = await promise.json();
-    
-//     const filteredResults = result.filter(elem => !elem.completed).slice(0,6);
-//     console.log(filteredResults);
+// Triggers fade in animations on projects
+// when user scrolls to project section
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      document.querySelectorAll('.project')[0].classList.add('fadeInLeft');
+      document.querySelectorAll('.project')[1].classList.add('fadeInRight');
+      document.querySelectorAll('.project')[2].classList.add('fadeInUp');
+    }
+  })
+})
 
-// }
-
-// firstSixIncomplete();
+observer.observe(document.querySelector('.project__list'));
