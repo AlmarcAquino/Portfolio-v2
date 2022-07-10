@@ -8,13 +8,21 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./app.js" defer></script>
   <script src="https://kit.fontawesome.com/7185b28a7b.js" crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("0gEtMWsyoguQlb94n");
+    })();
+  </script>
 </head>
 <body>
   <!-- LANDING PAGE -->
   <section id="landing-page"> 
     <nav>
       <figure class="nav__img--container">
-        <a href=""><img class="nav__img" src="./assets/AA.png" alt=""></a>
+        <a href=""><img class="nav__img" src="./assets/AA-logo.png" alt=""></a>
       </figure>
       <ul class="nav__link--list">
         <li class="nav__link">
@@ -78,6 +86,38 @@
     <a href="#projects" class="scroll">
       <div class="scroll__icon click"></div>
     </a>
+    <!-- CONTACT MODAL -->
+    <div class="modal">
+      <div class="modal__contact">
+        <h3 class="modal__title">Let's <span class="highlight-text">Connect!</span></h3>
+        
+        <form onsubmit="contact(event)" class="modal__form">
+          <div class="form__item">
+            <label for="name" class="modal__form--label">Name</label>
+            <input type="text" name="user_name" required></input>
+          </div>
+
+          <div class="form__item">
+            <label for="email" class="modal__form--label">Email</label>
+            <input type="email" name="user_email" required></input>
+          </div>
+          
+          <div class="form__item">
+            <label for="message" class="modal__form--label">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button id="contact__submit" class="form__submit">Send</button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading">
+          <i class="fa-solid fa-spinner"></i>
+        </div>
+        <div class="modal__overlay modal__overlay--success">
+          Thanks for reaching out! I look forward to getting in contact soon!
+        </div>
+      </div>
+      <i class="fa-solid fa-xmark modal__exit click"></i>  
+    </div>
   </section>
   <!-- END OF LANDING PAGE -->
 
@@ -160,8 +200,44 @@
     </div>
   </section>
   <!-- END OF PROJECTS -->
-  
-
-
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__container">
+      <div class="row footer__row">
+        <figure class="footer__logo--wrapper">
+          <a href="#"><img class="footer__logo" src="./assets/AA-logo.png" alt=""></a>
+        </figure>
+        <div class="footer__social--list">
+          <a href="#" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white">
+            GitHub
+          </a>
+          <a href="#" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white">
+            LinkedIn
+          </a>
+          <a href="#" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white">
+            Contact
+          </a>
+          <a href="#" class="
+            footer__social--link
+            link__hover-effect
+            link__hover-effect--white">
+            Resume
+          </a>
+        </div>
+        <span class="footer__copyright">Copyright &copy; Almarc Aquino</span>
+      </div>
+    </div>
+  </footer>
+  <!-- END OF FOOTER -->
+  <!-- END OF PAGE -->
 </body>
 </html>
