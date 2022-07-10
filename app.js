@@ -11,3 +11,28 @@ const observer = new IntersectionObserver(entries => {
 })
 
 observer.observe(document.querySelector('.project__list'));
+
+// Triggered on contact form submission
+// Sends Form information to email
+function contact(event) {
+  event.preventDefault();
+  
+  const loading = document.querySelector('.modal__overlay--loading');
+  const success = document.querySelector('.modal__overlay--success');
+  loading.classList.add('modal__overlay--visible')
+  emailjs
+    .sendForm(
+      'service_qqinydm',
+      'template_43tjfuw',
+      event.target,
+      '0gEtMWsyoguQlb94n'
+    ).then(() => {
+      loading.classList.remove('modal__overlay--visible');
+      success.classList.add('modal__overlay--visible');
+    }).catch(() => {
+      loading.classList.remove('modal__overlay--visible');
+      alert(
+        'The email service is temporarily unavailable. Please contact me directly at almarcfaquino@gmail.com'
+      );
+    })
+}
