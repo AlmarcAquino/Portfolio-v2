@@ -41,8 +41,8 @@
             Projects
           </a>
         </li>
-        <li class="nav__link">
-          <a href="" class="
+        <li class="nav__link" onclick="toggleModal()">
+          <a href="#" class="
             nav__link--anchor
             link__hover-effect
             link__hover-effect--black">
@@ -50,7 +50,7 @@
           </a>
         </li>
         <li class="nav__link click"> <!-- LIGHT/DARK MODE TOGGLER -->
-          <i class="fa-solid fa-circle-half-stroke"></i>
+          <i class="fa-solid fa-circle-half-stroke" onclick="toggleTheme()"></i>
         </li>
       </ul>
     </nav>
@@ -79,7 +79,7 @@
       </div>
     </header>
 
-    <button class="mail__btn click">
+    <button class="mail__btn click" onclick="toggleModal()">
       <i class="fa-solid fa-envelope"></i>
     </button>
 
@@ -115,8 +115,8 @@
         <div class="modal__overlay modal__overlay--success">
           Thanks for reaching out! I look forward to getting in contact soon!
         </div>
+        <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>  
       </div>
-      <i class="fa-solid fa-xmark modal__exit click"></i>  
     </div>
   </section>
   <!-- END OF LANDING PAGE -->
@@ -200,6 +200,17 @@
     </div>
   </section>
   <!-- END OF PROJECTS -->
+
+  <!-- ABOUT ME -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+
+      </div>
+    </div>
+  </section>
+  <!-- END OF ABOUT ME -->
+
   <!-- FOOTER -->
   <footer>
     <div class="footer__container">
