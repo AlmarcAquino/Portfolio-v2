@@ -1,11 +1,24 @@
+// Toggles light / dark mode
+let themeToggle = false;
+function toggleTheme() {
+  themeToggle = !themeToggle;
+  if(themeToggle) {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+}
+
+
 // Triggers fade in animations on projects
 // when user scrolls to project section
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
+    const projectDiv = document.querySelectorAll('.project');
     if(entry.isIntersecting) {
-      document.querySelectorAll('.project')[0].classList.add('fadeInLeft');
-      document.querySelectorAll('.project')[1].classList.add('fadeInRight');
-      document.querySelectorAll('.project')[2].classList.add('fadeInUp');
+      projectDiv[0].classList.add('fadeInLeft');
+      projectDiv[1].classList.add('fadeInRight');
+      projectDiv[2].classList.add('fadeInUp');
     }
   })
 })
@@ -35,4 +48,15 @@ function contact(event) {
         'The email service is temporarily unavailable. Please contact me directly at almarcfaquino@gmail.com'
       );
     })
+}
+
+// Opens and closes contact form
+let isModalOpen = false;
+function toggleModal() {
+  if(isModalOpen) {
+    isModalOpen = false;
+    return document.body.classList.remove('modal--open')
+  }
+  isModalOpen = !isModalOpen;
+  document.body.classList.add('modal--open');
 }
