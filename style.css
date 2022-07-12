@@ -5,12 +5,26 @@
 /* CREAM/CHAMPAGNE: #F4E9CD */
 /* 2:30 */
 
-/* TABLE OF CONTENTS */
-/*  */
+/* TABLE OF CONTENTS
+
+    RESETS / DEFAULTS
+    DARK THEME CHANGES
+    CUSTOM PROPERTIES
+    LANDING PAGE
+      HEADER
+      NAVIGATION
+      MODAL
+    PROJECTS
+    ABOUT ME
+    FOOTER
+
+*/
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 /* 
+
     RESETS / DEFAULTS
+    
 */ 
 * {
   padding: 0;
@@ -73,7 +87,9 @@ textarea:focus {
 }
 
 /* 
+
     REUSABLE
+
 */
 .container {
   padding: 50px 0;
@@ -131,6 +147,11 @@ textarea:focus {
   background-color: #242424;
 }
 
+/* 
+
+  HIDE WHEN MODAL ACTIVE
+
+*/
 nav,
 .scroll,
 .header {
@@ -147,7 +168,11 @@ nav,
   transition: all 200ms;
 }
 
-/* Dark Theme Changes */
+/* 
+
+    Dark Theme Changes
+    
+*/
 .dark-theme .title,
 .dark-theme .section__title,
 .dark-theme .section__sub-title,
@@ -189,9 +214,10 @@ nav,
 }
 
 
-
 /* 
+
     CUSTOM PROPERTIES
+
 */
 :root {
   --primary-light-bgc: rgb(245, 245, 245);
@@ -202,7 +228,9 @@ nav,
 }
 
 /* 
+
     LANDING PAGE
+
 */
 #landing-page {
   min-height: 100vh;
@@ -299,7 +327,9 @@ nav,
 }
 
 /* 
+
     NAVIGATION
+
 */
 nav {
   display: flex;
@@ -338,7 +368,9 @@ nav {
 }
 
 /* 
+
     MODAL
+
 */
 .modal {
   position: absolute;
@@ -399,6 +431,16 @@ nav {
   height: 85px;
 }
 
+.modal__exit {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: var(--primary-white-clr);
+  font-size: 2.25rem;
+  z-index: 5;
+}
+
+/* FORM SUBMIT BUTTON */
 .form__submit {
   align-self: center;
   width: 100%;
@@ -424,6 +466,7 @@ nav {
   color: var(--highlight-clr);
 }
 
+/* MODAL OVERLAYS */
 .modal__overlay--loading,
 .modal__overlay--success {
   position: absolute;
@@ -442,19 +485,6 @@ nav {
   font-size: 4rem;
 }
 
-.modal__overlay--success {
-  background-color: #135379;
-  color: var(--primary-white-clr);
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 20px;
-}
-
-.modal__overlay--visible {
-  z-index: 1;
-  display: flex;
-}
-
 .fa-spinner {
   animation: rotateSpinner 1000ms infinite;
 }
@@ -468,17 +498,23 @@ nav {
   }
 }
 
-.modal__exit {
-  position: absolute;
-  top: 30px;
-  right: 40px;
+.modal__overlay--success {
+  background-color: #135379;
   color: var(--primary-white-clr);
-  font-size: 2.25rem;
-  z-index: 5;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
 }
 
-/* 
+.modal__overlay--visible {
+  z-index: 1;
+  display: flex;
+}
+
+/*
+ 
     PROJECTS
+
 */
 .project-row {
   max-width: 1000px;
@@ -490,7 +526,7 @@ nav {
 .section__title {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .project {
@@ -595,7 +631,16 @@ nav {
 }
 
 /* 
+
+    ABOUT
+
+*/
+
+
+/* 
+
     FOOTER
+
 */
 footer {
   background-color: #242424;
