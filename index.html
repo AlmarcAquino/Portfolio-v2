@@ -19,7 +19,7 @@
 </head>
 <body>
   <!-- LANDING PAGE -->
-  <section id="landing-page"> 
+  <section id="landing-page" onmousemove="moveBackground(event)"> 
     <nav>
       <figure class="nav__img--container">
         <a href=""><img class="nav__img" src="./assets/AA-logo.png" alt=""></a>
@@ -79,9 +79,12 @@
       </div>
     </header>
 
-    <button class="mail__btn click" onclick="toggleModal()">
-      <i class="fa-solid fa-envelope"></i>
-    </button>
+    <a href="#"> <!-- MAIL-CONTACT BTN -->
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+    </a>
+    
 
     <a href="#projects" class="scroll">
       <div class="scroll__icon click"></div>
@@ -117,7 +120,17 @@
         </div>
         <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>  
       </div>
-    </div>
+    </div> <!-- END OF MODAL -->
+    <!-- BACKGROUND ICONS -->
+    <img src="./assets/semi circle.svg" class="shape shape--0">
+    <img src="./assets/circle.svg" class="shape shape--1">
+    <img src="./assets/squiggly.svg" class="shape shape--2">
+    <img src="./assets/circle.svg" class="shape shape--3">
+    <img src="./assets/triangle.svg" class="shape shape--4">
+    <img src="./assets/circle.svg" class="shape shape--5">
+    <img src="./assets/squiggly.svg" class="shape shape--6">
+    <img src="./assets/circle.svg" class="shape shape--7">
+    <img src="./assets/semi circle.svg" class="shape shape--8">
   </section>
   <!-- END OF LANDING PAGE -->
 
@@ -152,13 +165,16 @@
             </div>
           </div>
           <div class="project">
+            <figure class="project__img--wrapper">
+              <img class="project__img" src="./assets/google mockup.png" alt="">
+            </figure>
             <div class="project__description--container">
               <span class="project__title">Project Title 2</span>
               <p class="project__description--para">
                 This is where the project description would go. What it does,
                 why I made it, etc.
-                <br>
-                <br>
+                  <br>
+                  <br>
                 Challenges: this is where I would list some of the challenges 
                 and what I did to overcome them
               </p>
@@ -169,9 +185,6 @@
                 <a href="" class="project__link">Demo</a>
               </div>
             </div>
-            <figure class="project__img--wrapper">
-              <img class="project__img" src="./assets/google mockup.png" alt="">
-            </figure>
           </div>
           <div class="project">
             <figure class="project__img--wrapper">

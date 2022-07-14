@@ -17,6 +17,8 @@
     PROJECTS
     ABOUT ME
     FOOTER
+    BACKGROUND SHAPES
+    MEDIA QUERIES
 
 */
 
@@ -31,6 +33,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
@@ -284,11 +291,12 @@ nav,
   font-size: 2rem;
   border-radius: 50%;
   border: none;
-  background-color: #242424;
+  background-color: #363535;
   color: var(--primary-white-clr);
-  position: absolute;
+  position: fixed;
   bottom: 32px;
   right: 40px;
+  z-index: 1;
 }
 
 .scroll {
@@ -539,6 +547,10 @@ nav {
               -10px -10px 22px var(--primary-white-clr);
 }
 
+.project:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
 .project__title {
   color: var(--highlight-clr);
   font-size: 1.75rem;
@@ -547,12 +559,12 @@ nav {
 }
 
 .project__img--wrapper:nth-child(odd) {
-  width: 500px;
+  width: 50%;
   margin-right: 24px;
 }
 
 .project__img--wrapper:nth-child(even) {
-  width: 500px;
+  width: 50%;
   margin-left: 24px;
 }
 
@@ -679,3 +691,119 @@ footer {
   margin-top: 8px;
   font-size: 0.8rem;
 }
+
+/* 
+
+    BACKGROUND SHAPES
+
+*/
+.shape {
+  width: 1.5vh;
+  position: relative;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.shape--0 {
+  top: 10vh;
+  left: 5vw;
+}
+.shape--1 {
+  top: 10vh;
+  left: 50vw;
+}
+.shape--2 {
+  top: 10vh;
+  left: 80vw;
+}
+.shape--3 {
+  top: 45vh;
+  left: 5vw;
+}
+.shape--4 {
+  top: 45vh;
+  left: 50vw;
+}
+.shape--5 {
+  top: 45vh;
+  left: 80vw;
+}
+.shape--6 {
+  top: 75vh;
+  left: 5vw;
+}
+.shape--7 {
+  top: 75vh;
+  left: 50vw;
+}
+.shape--8 {
+  top: 70vh;
+  left: 70vw;
+}
+
+/* 
+
+    MEDIA QUERIES
+
+*/
+@media (max-width: 822px) {
+  .title {
+    font-size: 5.5rem;
+  }
+  .header__para {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 665px) {
+  .title {
+    font-size: 4.5rem;
+  }
+  .header__para {
+    font-size: 1.5rem;
+  }
+  .section__title {
+    font-size: 2.25rem;
+  }
+  .project, .project:nth-child(2) {
+    flex-direction: column;
+  }
+  .project__img--wrapper:nth-child(even),
+  .project__img--wrapper:nth-child(odd) {
+    width: 100%;
+    margin: 0;
+  }
+  .project__title {
+    text-align: center;
+  } 
+  .mail__btn {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@media (max-width: 560px) {
+  .title {
+    font-size: 3.75rem;
+  }
+  .header__para {
+    font-size: 1.25rem;
+  }
+  .section__title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 3rem;
+  }
+  .header__para {
+    font-size: 1.125rem;
+  }
+  .section__title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Need burger Menu / Navgiation Changes for smaller res */
