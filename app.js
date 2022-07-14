@@ -1,5 +1,9 @@
-// Toggles light / dark mode
+// Globals
+const scaleFactor = 1 / 20;
+let isModalOpen = false;
 let themeToggle = false;
+
+// Toggles light / dark mode
 function toggleTheme() {
   themeToggle = !themeToggle;
   if(themeToggle) {
@@ -24,6 +28,7 @@ const observer = new IntersectionObserver(entries => {
 })
 
 observer.observe(document.querySelector('.project__list'));
+
 
 // Triggered on contact form submission
 // Sends Form information to email
@@ -50,8 +55,8 @@ function contact(event) {
     })
 }
 
+
 // Opens and closes contact form
-let isModalOpen = false;
 function toggleModal() {
   if(isModalOpen) {
     isModalOpen = false;
@@ -59,4 +64,18 @@ function toggleModal() {
   }
   isModalOpen = !isModalOpen;
   document.body.classList.add('modal--open');
+}
+
+
+// Moves background shapes on mouse move
+function moveBackground(event) {
+  const shapes = document.querySelectorAll('.shape');
+  const xMouse = event.clientX * scaleFactor;
+  const yMouse = event.clientY * scaleFactor;
+
+  for(let i = 0; i < shapes.length; i++) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shapes[i].style.transform = `translate(${xMouse * boolInt}px, ${yMouse * boolInt}px)`;
+  }
 }
