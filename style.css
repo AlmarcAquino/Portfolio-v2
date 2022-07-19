@@ -8,8 +8,9 @@
 /* TABLE OF CONTENTS
 
     RESETS / DEFAULTS
-    DARK THEME CHANGES
     CUSTOM PROPERTIES
+    REUSABLE CLASSES
+    DARK THEME CHANGES
     LANDING PAGE
       HEADER
       NAVIGATION
@@ -23,11 +24,11 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
-/* 
+/* ---------------------
 
     RESETS / DEFAULTS
     
-*/ 
+ --------------------- */ 
 * {
   padding: 0;
   margin: 0;
@@ -93,11 +94,25 @@ textarea:focus {
   border-color: var(--highlight-clr);
 }
 
-/* 
+/* ---------------------
+
+    CUSTOM PROPERTIES
+
+ --------------------- */
+:root {
+  --primary-light-bgc: rgb(245, 245, 245);
+
+  --primary-white-clr: #F8F5FA;
+  --primary-dark-clr: #242424;
+  --highlight-clr: #527770;
+  --highlight-clr-dark: #546175;
+}
+
+/* ---------------------
 
     REUSABLE
 
-*/
+ --------------------- */
 .container {
   padding: 50px 0;
   width: 100%;
@@ -154,11 +169,7 @@ textarea:focus {
   background-color: #242424;
 }
 
-/* 
-
-  HIDE WHEN MODAL ACTIVE
-
-*/
+/* HIDE WHEN MODAL ACTIVE */
 nav,
 .scroll,
 .header {
@@ -175,18 +186,19 @@ nav,
   transition: all 200ms;
 }
 
-/* 
+/* ---------------------
 
-    Dark Theme Changes
+    DARK THEME CHANGES
     
-*/
+ --------------------- */
 .dark-theme .title,
 .dark-theme .section__title,
 .dark-theme .section__sub-title,
 .dark-theme .nav__link--anchor,
 .dark-theme .fa-circle-half-stroke,
 .dark-theme .header__para, 
-.dark-theme .project {
+.dark-theme .project,
+.dark-theme .nav__name {
   color: var(--primary-white-clr);
 }
 
@@ -220,25 +232,20 @@ nav,
               -5px -5px 25px #3a3a3a;
 }
 
-
-/* 
-
-    CUSTOM PROPERTIES
-
-*/
-:root {
-  --primary-light-bgc: rgb(245, 245, 245);
-
-  --primary-white-clr: #F8F5FA;
-  --primary-dark-clr: #242424;
-  --highlight-clr: #527770;
+.dark-theme .bar {
+  background-color: var(--primary-white-clr);
 }
 
-/* 
+.dark-theme .nav__link--list.active {
+  box-shadow:  4px 4px 3px #1f1f1f;
+}
+
+
+/* ---------------------
 
     LANDING PAGE
 
-*/
+ --------------------- */
 #landing-page {
   min-height: 100vh;
 }
@@ -334,11 +341,11 @@ nav,
   }
 }
 
-/* 
+/* --------------------- 
 
     NAVIGATION
 
-*/
+ --------------------- */
 nav {
   display: flex;
   justify-content: space-between;
@@ -372,11 +379,11 @@ nav {
   cursor: pointer;
 }
 
-/* 
+/* --------------------- 
 
     HAMBURGER MENU
 
-*/
+ --------------------- */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -391,18 +398,17 @@ nav {
   background-color: var(--primary-dark-clr);
 }
 
-/* 
+/* --------------------- 
 
     MODAL
 
-*/
+ --------------------- */
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  width: 40%;
-  max-width: 600px;
+  width: clamp(325px, 450px, 60%);
   border-radius: 20px;
   overflow: hidden;
   visibility: hidden;
@@ -421,7 +427,7 @@ nav {
 }
 
 .modal__contact {
-  background-color: #242424;
+  background-color: var(--primary-dark-clr);
   color: white;
   width: 100%;
   padding: 20px;
@@ -523,7 +529,7 @@ nav {
 }
 
 .modal__overlay--success {
-  background-color: #135379;
+  background-color: var(--highlight-clr-dark);
   color: var(--primary-white-clr);
   font-size: 1.5rem;
   text-align: center;
@@ -535,11 +541,11 @@ nav {
   display: flex;
 }
 
-/*
+/* --------------------- 
  
     PROJECTS
 
-*/
+ --------------------- */
 .project-row {
   max-width: 1000px;
   width: 100%;
@@ -658,18 +664,18 @@ nav {
   }
 }
 
-/* 
+/* --------------------- 
 
     ABOUT
 
-*/
+ --------------------- */
 
 
-/* 
+/* --------------------- 
 
     FOOTER
 
-*/
+ --------------------- */
 footer {
   background-color: #242424;
   padding: 3% 0;
@@ -708,11 +714,11 @@ footer {
   font-size: 0.8rem;
 }
 
-/* 
+/* --------------------- 
 
     BACKGROUND SHAPES
 
-*/
+ --------------------- */
 .shape {
   width: 1.5vh;
   position: relative;
@@ -757,11 +763,11 @@ footer {
   left: 70vw;
 }
 
-/* 
+/* --------------------- 
 
     MEDIA QUERIES
 
-*/
+ --------------------- */
 @media (max-width: 822px) {
   .title {
     font-size: 5.5rem;
@@ -799,7 +805,7 @@ footer {
     z-index: 5;
     gap: 45px;
     border-radius: 15px;
-    background: #546175;
+    background: var(--highlight-clr-dark);
     box-shadow:  5px 5px 4px #bfbfbf;
   }
   .nav__link--anchor,
@@ -848,9 +854,17 @@ footer {
   .section__title {
     font-size: 1.75rem;
   }
+  .mail__btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
 }
 
 @media (max-width: 480px) {
+  .mail__btn {
+    position: absolute;
+  }
   .title {
     font-size: 3rem;
   }
@@ -861,5 +875,3 @@ footer {
     font-size: 1.75rem;
   }
 }
-
-/* Need burger Menu / Navgiation Changes for smaller res */
