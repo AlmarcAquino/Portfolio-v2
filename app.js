@@ -1,10 +1,10 @@
 // Globals
 const scaleFactor = 1 / 20;
 let isModalOpen = false;
-let themeToggle = false;
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav__link--list');
 const navLinks = document.querySelectorAll('.nav__link');
+const themeChanger = document.querySelector('.fa-circle-half-stroke')
 
 
 // Hambuger Menu Control
@@ -22,14 +22,9 @@ navLinks.forEach(link => {
 
 
 // Toggles light / dark mode
-function toggleTheme() {
-  themeToggle = !themeToggle;
-  if(themeToggle) {
-    document.body.classList.add('dark-theme');
-  } else {
-    document.body.classList.remove('dark-theme');
-  }
-}
+themeChanger.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+})
 
 
 // Triggers fade in animations on projects
