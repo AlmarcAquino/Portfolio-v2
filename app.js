@@ -2,6 +2,24 @@
 const scaleFactor = 1 / 20;
 let isModalOpen = false;
 let themeToggle = false;
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav__link--list');
+const navLinks = document.querySelectorAll('.nav__link');
+
+
+// Hambuger Menu Control
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+})
+  // Close Menu on Link Click
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  })
+})
+
 
 // Toggles light / dark mode
 function toggleTheme() {
@@ -79,3 +97,5 @@ function moveBackground(event) {
     shapes[i].style.transform = `translate(${xMouse * boolInt}px, ${yMouse * boolInt}px)`;
   }
 }
+
+
