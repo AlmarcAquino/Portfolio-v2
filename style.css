@@ -1,10 +1,4 @@
-/* COLORS */
-/* DARK DARK BLUE: #031926 */
-/* LIGHT GREEN: #77ACA2 */
-/* VERY LIGHT GREEN: #9DBEBB */
-/* CREAM/CHAMPAGNE: #F4E9CD */
-/* 2:30 */
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 /* TABLE OF CONTENTS
 
     RESETS / DEFAULTS
@@ -23,7 +17,6 @@
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 /* ---------------------
 
     RESETS / DEFAULTS
@@ -562,6 +555,7 @@ nav {
 .project {
   display: flex;
   align-items: center;
+  gap: 24px;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
@@ -580,14 +574,8 @@ nav {
   font-weight: 700;
 }
 
-.project__img--wrapper:nth-child(odd) {
+.project__img--wrapper {
   width: 50%;
-  margin-right: 24px;
-}
-
-.project__img--wrapper:nth-child(even) {
-  width: 50%;
-  margin-left: 24px;
 }
 
 .project__img {
